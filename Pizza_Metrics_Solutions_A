@@ -1,0 +1,30 @@
+select * from customer_orders
+select * from pizza_names
+select * from pizza_recipes
+select * from pizza_toppings
+select * from runner_orders
+select * from runners
+-- A. Pizza Metrics
+-- 1. How many pizza were ordered?
+select count(pizza_id) AS total_number_of_pizza_ordered from customer_orders
+ 
+-- 2. How many unique customer_orders were made?
+select count(distinct order_id) AS number_of_distinct_customer_orders from customer_orders
+
+-- 3. How many successful orders were delivered by each runner?
+select ro.runner_id, count(ro.order_id) AS delivered_orders from runner_orders AS ro
+where ro.pickup_time != 'NULL'
+group by ro.runner_id
+
+-- 4. How many of each type of pizza was delivered?
+SELECT 
+  pn.pizza_name, 
+  COUNT(co.order_id) as number_of_delivered_pizzas 
+FROM 
+  customer_orders as co 
+  INNER JOIN pizza_names as pn on co.pizza_id = pn.pizza_id 
+  INNER JOIN runner_orders as ro on ro.order_id = co.order_id 
+WHERE 
+ro.pickup_time != 'null'
+GROUP BY 
+  pn.pizza_name;
