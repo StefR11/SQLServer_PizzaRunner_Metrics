@@ -28,3 +28,8 @@ WHERE
 ro.pickup_time != 'null'
 GROUP BY 
   pn.pizza_name;
+
+-- 5. How many Vegetarian and MeatLovers were ordered by each customers?
+select count(co.pizza_id) as total_number_of_pizzas_ordered, co.customer_id, pn.pizza_name from customer_orders as co
+inner join pizza_names as pn on co.pizza_id = pn.pizza_id
+group by co.customer_id, pn.pizza_name
