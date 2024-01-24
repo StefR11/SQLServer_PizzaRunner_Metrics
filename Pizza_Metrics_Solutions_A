@@ -19,7 +19,7 @@ group by ro.runner_id
 -- 4. How many of each type of pizza was delivered?
 SELECT 
   pn.pizza_name, 
-  COUNT(co.order_id) as number_of_delivered_pizzas 
+  COUNT(co.order_id) as total_number_of_delivered_orders
 FROM 
   customer_orders as co 
   INNER JOIN pizza_names as pn on co.pizza_id = pn.pizza_id 
