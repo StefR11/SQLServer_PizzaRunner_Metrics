@@ -64,6 +64,7 @@ group by co.customer_id
 select COUNT(co.pizza_id) as number_of_pizzas_delivered from customer_orders as co
 inner join runner_orders as ro 
 on co.order_id = ro.order_id
-where ro.pickup_time != 'NULL' AND
+where ro.pickup_time != 'NULL' 
+AND
 (co.exclusions IS NOT NULL and co.exclusions != 'NULL' and LEN(co.exclusions)>0) AND
 (co.extras IS NOT NULL and co.extras != 'NULL' and LEN(co.extras)>0)
