@@ -66,5 +66,12 @@ inner join runner_orders as ro
 on co.order_id = ro.order_id
 where ro.pickup_time != 'NULL' 
 AND
-(co.exclusions IS NOT NULL and co.exclusions != 'NULL' and LEN(co.exclusions)>0) AND
+(co.exclusions IS NOT NULL and co.exclusions != 'NULL' and LEN(co.exclusions)>0)
+AND
 (co.extras IS NOT NULL and co.extras != 'NULL' and LEN(co.extras)>0)
+
+-- 9. What was the total volume of pizzas ordered for each hour of the day?
+select COUNT(order_id) AS total_volume_of_orders,
+DATEPART(hour, order_time) AS hour
+from customer_orders
+group by DATEPART(hour, order_time)
