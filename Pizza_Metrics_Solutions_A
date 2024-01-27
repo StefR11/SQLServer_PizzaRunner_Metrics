@@ -75,3 +75,10 @@ select COUNT(order_id) AS total_volume_of_orders,
 DATEPART(hour, order_time) AS hour
 from customer_orders
 group by DATEPART(hour, order_time)
+
+-- 10. What was the volume of orders for each day of the week?
+select COUNT(order_id) AS total_volume_orders, 
+DATEPART(WEEKDAY, order_time) AS week_day,
+DATENAME(DW, order_time) AS day_name_of_the_week
+from customer_orders
+group by DATEPART(WEEKDAY, order_time), DATENAME(DW, order_time)
