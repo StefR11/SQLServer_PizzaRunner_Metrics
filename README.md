@@ -1,4 +1,10 @@
-# SQLServer_PizzaRunner_Metrics
+# SQLServer_PizzaRunner_Metrics project showcases 
+1 how to work with NULL values
+2 working with dates (DATETRUNC, DATENAME, DATEPART)
+3 group by
+4 joins
+5 conditional statements
+
 The Entrepreneur decided to start a business about combining pizza delivery with running so it has a team of runners out there going to deliver pizza for him. He has prepared an entity relationship diagram of his database design but requires further assistance to clean his data and apply some basic calculations so he can better direct his runners and optimise Pizza Runner’s operations.
 The SQL schema is made of 6 tables.
 Customer pizza orders are captured in the customer_orders table. One single order may contain more than 1 pizza. The pizza_id relates to the type of pizza which was ordered whilst the exclusions are the ingredient_id values which should be removed from the pizza and the extras are the ingredient_id values which need to be added to the pizza. Customers can order multiple pizzas in a single order with varying exclusions and extras values even if the pizza is the same type! The exclusions and extras columns will need to be cleaned up before using them in the queries.
