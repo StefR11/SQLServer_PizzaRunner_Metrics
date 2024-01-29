@@ -82,3 +82,15 @@ DATEPART(WEEKDAY, order_time) AS week_day,
 DATENAME(DW, order_time) AS day_name_of_the_week
 from customer_orders
 group by DATEPART(WEEKDAY, order_time), DATENAME(DW, order_time)
+
+-- 11. Select * from the runners table plus extract the name of the day and start of week from the date column
+select *,
+DATENAME(WEEKDAY, registration_date) AS day_name,
+DATETRUNC(WEEK, registration_date) AS start_of_week
+from runners
+
+-- 12. How many runners signed up for each start_of_week
+select COUNT(runner_id) AS number_of_runners,
+DATETRUNC(WEEK, registration_date) AS start_of_week
+from runners
+group by DATETRUNC(WEEK, registration_date)
