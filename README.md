@@ -1,4 +1,5 @@
-# SQLServer_PizzaRunner_Metrics project showcases 
+# SQLServer_PizzaRunner_Metrics project 
+This project showcases
 1 how to work with NULL values
 2 working with dates (DATETRUNC, DATENAME, DATEPART)
 3 group by
