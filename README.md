@@ -2,8 +2,7 @@
 This project showcases
 1 how to work with NULL values
 2 working with dates (DATETRUNC, DATENAME, DATEPART)
-3 group by
-4 joins
+3 WHERE & GROUP BY CLAUSES
 5 conditional statements
 
 The Entrepreneur decided to start a business about combining pizza delivery with running so it has a team of runners out there going to deliver pizza for him. He has prepared an entity relationship diagram of his database design but requires further assistance to clean his data and apply some basic calculations so he can better direct his runners and optimise Pizza Runner’s operations.
